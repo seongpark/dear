@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'ONE-Mobile-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ONE-Mobile-Regular'!important;
+    background-color: #f2f2f2!important;
+}
+
+.top-menu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 6px 0px 6px 2px rgb(0 0 0 / 30%);
+}
+
+a {
+    color: black!important;
+    text-decoration: none!important;
+}   
+
+.message {
+    background-color: #5858FA;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transform: translate(0, -0.1rem);
+    color: white;
+    border-radius: 10px;
+}
+
+  .profile {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50px;
+    margin-right: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
