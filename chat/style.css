@@ -1,13 +1,13 @@
+
 @font-face {
-    font-family: 'ONE-Mobile-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
 }
 
 body {
-    font-family: 'ONE-Mobile-Regular'!important;
-    background-color: #f2f2f2!important;
+    font-family: 'Pretendard-Regular'!important;
 }
 
 .top-menu {
@@ -17,12 +17,68 @@ body {
     box-shadow: 6px 0px 6px 2px rgb(0 0 0 / 30%);
 }
 
-a {
-    color: black!important;
-    text-decoration: none!important;
-}   
+
+.okbtnfix {
+    width: 100%;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    text-align: center;
+    background-color: #561deb;
+    color: white;
+    font-size: 20px;
+}
+
+.profile {
+    width: 57px;
+  height: 57px;
+  margin: 0 8px 0 0;
+  border-radius: 67px;
+  border: solid 1px rgba(112, 112, 112, 0.11);
+  background-color: #b52f2f;
+}
+
+.profile-2 {    
+    width: 45px;
+  height: 45px;
+  margin: 0 8px 0 0;
+  border-radius: 67px;
+  border: solid 3px #A9E2F3;
+  background-image : url('https://i.ibb.co/8dx4pDN/images.jpg')!important;
+}
+
 
 .message {
+    width: 100%;
+    height: 100%;
+    padding: 22px 21px 9px 20px;
+    background-color: #ededed;
+}
+
+.sendbox {
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    padding: 15px;
+    border: solid 2px #d3d3d3;
+    background-color: #fff;
+    margin-bottom: 12px;
+}
+.sendbox:focus {
+    outline: none;
+}
+
+.sendbtn {
+      width: 50px;
+  height: 48px;
+  margin: 0 0 22px 14px;
+  border-radius: 15px;
+  color: white;
+  padding: 11px;
+  border: solid 2px #4f21e2;
+  background-color: #4f21e2;
+}
+
+.message-box {
     background-color: #5858FA;
     padding-left: 10px;
     padding-right: 10px;
@@ -31,15 +87,4 @@ a {
     transform: translate(0, -0.1rem);
     color: white;
     border-radius: 10px;
-}
-
-  .profile {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    border-radius: 50px;
-    margin-right: 8px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }

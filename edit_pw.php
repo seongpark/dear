@@ -28,41 +28,15 @@
 <body>
     <div class="container mt-5">
         <h1>
-            <b>프로필 편집</b>
+            <b>비밀번호 변경</b>
         </h1>
-        <form action="login/member/member_update.php" method="post">
-        <?php
-			$sql = mq("select * from member where id='{$_SESSION['userid']}'");
-			while($member = $sql->fetch_array()){
-		?>
+        <form action="login/member/pw_update.php" method="post">
         <div style="height:9px;"></div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">아이디</label>
-            <input type="text" class="form-control" name="userid" value="<?php echo $_SESSION['userid'];?>" disabled>
+            <label for="exampleInputEmail1" class="form-label">새 비밀번호</label>
+            <input type="text" class="form-control" name="pw" minlength="8" placeholder="8자 이상, 대문자, 특수문자 포함" required>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">이름</label>
-            <input type="text" class="form-control" name="name" value="<?php echo $member['name'];?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">전화번호</label>
-            <input type="text" class="form-control" name="adress" value="<?php echo $member['adress'];?>" placeholder="- 없이 입력" required>
-        </div>
-        <hr>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">프로필 사진 URL</label>
-            <input type="text" class="form-control" name="profile" value="<?php echo $member['profile_image'];?>"  required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">배경 사진 URL</label>
-            <input type="text" class="form-control" name="bg" value="<?php echo $member['bg_image'];?>" required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">소개 문구</label>
-            <input type="text" class="form-control" name="intro" value="<?php echo $member['intro'];?>" required>
-        </div>
-        <?php } ?>
-        <hr>
+
         <div class="d-grid gap-2">
   <button class="btn btn-dark" type="submit">변경</button>
 <div class="mt-5"></div>

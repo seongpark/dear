@@ -25,19 +25,41 @@
     </center>
 			<div class="mb-3 mt-2">
             <label for="formGroupExampleInput" class="form-label">아이디</label>
-            <input type="text" class="form_class" name="userid" placeholder="영어만, 최대 20자" maxlength="20">
+            <input type="text" class="form_class" name="userid" placeholder="영어만, 최대 20자" maxlength="20" required>
         </div>
 		<div class="mb-3 mt-2">
             <label for="formGroupExampleInput" class="form-label">비밀번호</label>
-            <input type="password" class="form_class" name="userpw" placeholder="최소 8자 이상"  minlength="8">
+            <input type="text" class="form_class" name="userpw" placeholder="최소 8자 이상, 대소문자, 특수문자 포함"  minlength="8" required>
         </div>
 		<div class="mb-3 mt-2">
             <label for="formGroupExampleInput" class="form-label">이름</label>
-            <input type="text" class="form_class" name="name">
+            <input type="text" class="form_class" name="name" required>
         </div>
 		<div class="mb-3 mt-2">
             <label for="formGroupExampleInput" class="form-label">전화번호</label>
-            <input type="text" class="form_class" name="adress" placeholder="- 없이 입력">
+        
+            <div class="d-flex flex-row mb-3">
+    <div>
+    <input type="number" class="form_class" name="adress1"  max="999"  required>
+    </div>
+    <div>
+        -
+    </div>
+    <div>   
+      
+    </div>
+    <div>
+    <input type="number" class="form_class" name="adress2"  max="9999"  required>
+    </div>
+    <div>
+        -
+    </div>
+    <div>
+    <input type="number" class="form_class" name="adress3"  max="9999"  required>
+    </div>
+
+</div>
+           
         </div>
 		<div class="d-grid gap-2 mt-4">
             <button class="btn btn-light btn-lg" style="background-color: #5858FA; color: white;" type="submit">시작하기</button>

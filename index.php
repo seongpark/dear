@@ -51,14 +51,14 @@
         <div style="height:10px;"></div>
         <hr>
         <span class="friends">추천 친구
-            <b>1</b>
+
         </span>
         <?php
-			$sql = mq("select * from member where id='oopseong'");
+			$sql = mq("select * from member where access='admin'");
 			while($member = $sql->fetch_array()){
 		?>
         <div style="height:9px;"></div>
-        <a href="profile/info.php">
+        <a href="profile/info.php?name=<?php echo $member['name']; ?>">
             <div class="d-flex justify-content-start">
                 <div>
                     <div
@@ -97,7 +97,7 @@
         </div>
     </div>
 <?php 
-		}else{
+	}else{
 		echo "<script>location.href='login';</script>";
 	} ?>
     <script

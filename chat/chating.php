@@ -18,7 +18,16 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous"
         referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?ver=2">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        hr {
+            color: #5c5c5c;
+        }
+    </style>
 </head>
 <body>
     <div class="fixed-top">
@@ -37,6 +46,7 @@
                     </a>
                 </div>
                 <div>
+
                     <div style="height:5px;"></div>
                     <a href="../" style="color: black; font-size: 25px; margin-right:20px;">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -46,50 +56,72 @@
         </div>
     </div>
 
-    <div style="margin-top:60px"></div>
 
-    <div class="container">
+    <div style="margin-top:90px"></div>
 
-        <div style="height:18px"></div>
-
-        <?php
+            <?php
 $sql3 = mq("select * from chat");
 while($chat = $sql3->fetch_array()){ 
-            ?>          
-        <div style="height:7px"></div>
-        <div class="d-flex justify-content-start">
-            <div>
-                <?php
+            ?>
+        <div class="container ">
+        <?php
 			$sql = mq("select * from member where id='oopseong'");
 			while($member = $sql->fetch_array()){
 		?>
-                <div class="profile" style="background-image:url('<?php echo $member['profile_image']; ?>');"></div>
+            <div class="d-flex justify-content-start ">
+            <div class="profile-2"  style="background-image : url('<?php echo $member['profile_image']; ?>');"  ></div>
+                <div>
                 <?php } ?>
-            </div>
-            <div>
-                <p style="margin-bottom:0; font-size:15px;">박민성</p>
-                <div style="height:3px;"></div>
-                <div class="message">
-                <?php
+                    
+                    <div class="d-flex justify-content-start">
+                        <p style="margin-bottom:0; font-size:15px;">
+                            <p style="font-size: 18px; margin-bottom: 0;">박민성</p>
+                        </div>
+                        <div style="height: 2px;"></div>
+                        <div class="message-box">     <?php
                    echo $chat['text'];
-                ?>
+                ?></div>
+                        <p style="font-size: 13px; color: #818181;"><?php echo $chat['date']; ?>
+                    <?php echo $chat['time']; ?></p>
+                    </div>
                 </div>
-                <span style="font-size:10px"><?php echo $chat['date']; ?> <?php echo $chat['time']; ?></span>
             </div>
+            <?php } ?>
+
+
+        <div class="mt-5"></div>
+        <form action="send_update.php" method="post">
+            <div class="fixed-bottom">
+                <div class="send">
+                    <div class="container">
+                        <div class="d-flex">
+                            <div class="p-2 w-100">
+                                <input
+                                    type="text"
+                                    class="send-input"
+                                    placeholder="   메세지 입력"
+                                    name="message"
+                                    required="required">
+                            </div>
+                            <div class="p-2 flex-shrink-1" style="font-size: 32px;">
+                                <button tyle="submit" class="send_btn">
+                                    <i class="fa-solid fa-paper-plane" style="color:#A4A4A4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <?php } ?>
-<div class="mt-5"></div>
-
-    </div>
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-        crossorigin="anonymous"></script>
-</body>
+        <div style="margin-top: 100px"></div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+    </body>
 </html>
 <?php } ?>

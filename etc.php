@@ -26,8 +26,6 @@
             <b>설정</b>
         </h1>
         <?php
-			$sql = mq("select * from member where id='oopseong'");
-			while($member = $sql->fetch_array()){
 		?>
         <div style="height:9px;"></div>
         <a href="login/member/logout.php">
@@ -45,13 +43,24 @@
                 </div>
             </div>
         </a>
+        <div style="height:18px;"></div>
+        <a href="edit_pw.php">
+            <div class="button-block">
+                <div class="container">
+                비밀번호 변경
+                </div>
+            </div>
+        </a>
         <?php
-            if($_SESSION['userid'] == "oopseong") {
+			$sql = mq("select * from member where id='{$_SESSION['userid']}'");
+			while($member = $sql->fetch_array()){
+
+            if($member['access'] == "admin") {
                 echo '<div style="height:18px;"></div>
                 <a href="chat/write.php">
                     <div class="button-block">
                         <div class="container">
-                        메세지 보내기
+                        메세지 관리
                         </div>
                     </div>
                 </a>';

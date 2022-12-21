@@ -3,7 +3,8 @@
 	if(isset($_SESSION['userid'])){
 ?>
 <?php
-			$sql = mq("select * from member where id='oopseong'");
+$name = $_GET['name'];
+			$sql = mq("select * from member where name='$name'");
 			while($member = $sql->fetch_array()){
 		?>
 <!DOCTYPE html>
